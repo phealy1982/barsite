@@ -33,3 +33,12 @@ function getSpotifyInfo(){
 
 var spotifyApi="https://api.spotify.com";
 }
+
+function getInfo() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "https://api.spotify.com/v1/artists/6Ghvu1VvMGScGpOUJBAHNH/albums", false);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
+    var response = JSON.parse(xhttp.responseText);
+    document.getElementById("info").innerText= xhttp.responseText;
+}
